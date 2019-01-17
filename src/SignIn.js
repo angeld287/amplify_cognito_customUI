@@ -61,11 +61,13 @@ class SignIn extends Component {
           user.challengeName === "SOFTWARE_TOKEN_MFA"
         ) {
           this.changeState("confirmSignIn", user);
+          console.log("test")
         } else if (user.challengeName === "NEW_PASSWORD_REQUIRED") {
           this.changeState("requireNewPassword", user);
         } else if (user.challengeName === "MFA_SETUP") {
           this.changeState("TOTPSetup", user);
         } else {
+          console.log("test1")
           this.changeState("signedIn", user);
         }
       })
